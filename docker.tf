@@ -3,6 +3,7 @@ resource "aws_instance" "docker" {
   #instance_type = "t3.micro"
   vpc_security_group_ids = [aws_security_group.allow_all_docker.id]
   instance_type = "t3.medium"
+  iam_instance_profile = data.aws_iam_instance_profile.eks_role.eks-cluster-creation
   # need more for terraform
   root_block_device {
     volume_size = 50

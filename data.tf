@@ -17,3 +17,7 @@ data "aws_ami" "joindevops" {
     values = ["hvm"]
   }
 }
+
+data "aws_iam_instance_profile" "eks_role" {
+  name = "eks-cluster-creation"
+}
